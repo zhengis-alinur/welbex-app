@@ -9,6 +9,9 @@ import BackArrow from '../assets/icons/BackArrow';
 import { RootStackParamList } from '../navigation/AppStack';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Badge from '../components/Badge';
+import MapView from 'react-native-maps';
+import { Vehicle as VehicleType } from '../types';
+import CustomMarker from '../components/CustomMarker';
 
 const Vehicle = ({
   route,
@@ -17,6 +20,7 @@ const Vehicle = ({
   route: RouteProp<RootStackParamList>;
   navigation: NativeStackNavigationProp<RootStackParamList>;
 }) => {
+  const vehicle = route.params as VehicleType;
   return (
     <RootView style={styles.root}>
       <Header title={'Транспортное средство'} />
@@ -25,11 +29,24 @@ const Vehicle = ({
           <BackArrow />
         </TouchableOpacity>
         <Text weight={'light'} size={20}>
-          № {route.params?.id}
+          № {vehicle?.id}
         </Text>
         <Text weight={'bold'} size={15}>
           Near Rental Map
         </Text>
+        <View style={{ width: '100%', height: 300, borderRadius: 15, overflow: 'hidden' }}>
+          <MapView
+            style={StyleSheet.absoluteFill}
+            initialRegion={{
+              latitude: vehicle?.latitude,
+              longitude: vehicle?.longitude,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          >
+            <CustomMarker vehicle={vehicle} />
+          </MapView>
+        </View>
         <View
           style={{
             width: '100%',
@@ -38,13 +55,13 @@ const Vehicle = ({
         >
           <Text>Rented Vehicle</Text>
           <Text weight={'bold'} size={16}>
-            {route.params?.name}
+            {vehicle?.name}
           </Text>
         </View>
         <Image
           style={{ width: 300, height: 200 }}
           resizeMode="contain"
-          source={{ uri: route.params?.image }}
+          source={{ uri: vehicle?.image }}
         />
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <View style={{ width: '50%' }}>
@@ -52,7 +69,7 @@ const Vehicle = ({
               Driver
             </Text>
             <Text weight="bold" size={16} color="#FFF">
-              {route.params?.driverName}
+              {vehicle?.driverName}
             </Text>
           </View>
           <View>
@@ -60,7 +77,7 @@ const Vehicle = ({
               Phone:
             </Text>
             <Text weight="bold" size={16}>
-              {route.params?.driverPhone}
+              {vehicle?.driverPhone}
             </Text>
           </View>
         </View>

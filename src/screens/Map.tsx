@@ -21,18 +21,8 @@ const Map = () => {
           longitudeDelta: 0.0421,
         }}
       >
-        {vehicles.map((vehicle, index) => (
-          <Marker
-            coordinate={{
-              latitude: vehicle.latitude,
-              longitude: vehicle.longitude,
-            }}
-            title={vehicle.name}
-            description={vehicle.category}
-            onPress={() => navigation.navigate('Vehicle', vehicle)}
-          >
-            <CustomMarker name={vehicle.name} category={vehicle.category} />
-          </Marker>
+        {vehicles.map((vehicle) => (
+          <CustomMarker vehicle={vehicle} key={vehicle.id} />
         ))}
       </MapView>
     </View>

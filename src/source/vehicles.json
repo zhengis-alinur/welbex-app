@@ -58,5 +58,15 @@
 		"image": "https://tuningbus.ru/storage/images/da96697991f26cd03e1eceee52dbd2d7.png",
 		"latitude": 37.78325,
 		"longitude": -122.4324
+	},
+	{
+		"name": "Subaru Impreza",
+		"id": "0007",
+		"category": "car",
+		"driverName": "Zhengis Ainur",
+		"driverPhone": "+1231231212",
+		"image": "https://www.pngplay.com/wp-content/uploads/13/Subaru-Impreza-Transparent-PNG.png",
+		"latitude": 37.78625,
+		"longitude": -122.4374
 	}
 ]
