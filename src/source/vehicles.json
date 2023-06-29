@@ -1,0 +1,44 @@
+[
+	{
+		"name": "Honda E Advance",
+		"id": "0001",
+		"category": "Легковая",
+		"driverName": "John Beck",
+		"driverPhone": "+1231231212"
+	},
+	{
+		"name": "mazda 3",
+		"id": "0002",
+		"category": "Легковая",
+		"driverName": "Andrew Tate",
+		"driverPhone": "+1231231212"
+	},
+	{
+		"name": "Harley Davidson",
+		"id": "0003",
+		"category": "Мотоцикл",
+		"driverName": "Bill Jack",
+		"driverPhone": "+1231231212"
+	},
+	{
+		"name": "Mercedes S class",
+		"id": "0004",
+		"category": "Легковая",
+		"driverName": "Bill Gates",
+		"driverPhone": "+1231231212"
+	},
+	{
+		"name": "Mercedes Sprinter",
+		"id": "0005",
+		"category": "Грузовая",
+		"driverName": "Simon Timberlake",
+		"driverPhone": "+1231231212"
+	},
+	{
+		"name": "gazelle",
+		"id": "0006",
+		"category": "Грузовая",
+		"driverName": "Sasha Bean",
+		"driverPhone": "+1231231212"
+	}
+]
