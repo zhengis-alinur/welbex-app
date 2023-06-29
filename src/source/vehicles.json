@@ -2,43 +2,55 @@
 	{
 		"name": "Honda E Advance",
 		"id": "0001",
-		"category": "Легковая",
+		"category": "car",
 		"driverName": "John Beck",
-		"driverPhone": "+1231231212"
+		"driverPhone": "+1231231212",
+		"latitude": 37.78825,
+		"longitude": -122.4354
 	},
 	{
 		"name": "mazda 3",
 		"id": "0002",
-		"category": "Легковая",
+		"category": "car",
 		"driverName": "Andrew Tate",
-		"driverPhone": "+1231231212"
+		"driverPhone": "+1231231212",
+		"latitude": 37.78825,
+		"longitude": -122.4424
 	},
 	{
 		"name": "Harley Davidson",
 		"id": "0003",
-		"category": "Мотоцикл",
+		"category": "moto",
 		"driverName": "Bill Jack",
-		"driverPhone": "+1231231212"
+		"driverPhone": "+1231231212",
+		"latitude": 37.78825,
+		"longitude": -122.4824
 	},
 	{
 		"name": "Mercedes S class",
 		"id": "0004",
-		"category": "Легковая",
+		"category": "car",
 		"driverName": "Bill Gates",
-		"driverPhone": "+1231231212"
+		"driverPhone": "+1231231212",
+		"latitude": 37.78725,
+		"longitude": -122.4324
 	},
 	{
 		"name": "Mercedes Sprinter",
 		"id": "0005",
-		"category": "Грузовая",
+		"category": "truck",
 		"driverName": "Simon Timberlake",
-		"driverPhone": "+1231231212"
+		"driverPhone": "+1231231212",
+		"latitude": 37.78525,
+		"longitude": -122.5324
 	},
 	{
 		"name": "gazelle",
 		"id": "0006",
-		"category": "Грузовая",
+		"category": "truck",
 		"driverName": "Sasha Bean",
-		"driverPhone": "+1231231212"
+		"driverPhone": "+1231231212",
+		"latitude": 37.78325,
+		"longitude": -121.4324
 	}
 ]
