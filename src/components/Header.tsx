@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { styled } from 'styled-components/native';
 import Text from '../components/AppText';
-import Map from '../assets/icons/Map';
+
+type Props = {
+  title: string;
+  subtitle?: string;
+  children?: ReactNode;
+};
 
 const Header = styled.View`
   flex-direction: row;
@@ -11,13 +16,13 @@ const Header = styled.View`
   min-height: 50px;
 `;
 
-const View = ({ title }: { title: string }) => {
+const View = ({ title, children }: Props) => {
   return (
     <Header>
-      <Text size={20} bold>
+      <Text size={20} weight={'bold'}>
         {title}
       </Text>
-      <Map />
+      {children}
     </Header>
   );
 };

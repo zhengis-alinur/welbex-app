@@ -1,9 +1,15 @@
 import styled from 'styled-components/native';
 
-const AppText = styled.Text<{ bold?: boolean; size?: number }>`
+type Props = {
+  weight?: 'light' | 'bold';
+  size?: number;
+  color?: string;
+};
+
+const AppText = styled.Text<Props>`
   font-family: 'Roboto';
-  color: #fff;
-  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
+  color: ${(props) => (props.color ? props.color : '#FFF')};
+  font-weight: ${(props) => props.weight || 300};
   font-size: ${(props) => props.size || 12}px;
 `;
 

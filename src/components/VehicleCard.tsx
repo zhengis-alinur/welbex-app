@@ -28,11 +28,11 @@ const VehicleCard = ({ vehicle }: { vehicle: Vehicle }) => {
           source={require('../assets/mazda.png')}
         />
         <View>
-          <Text bold size={20}>
+          <Text weight={'bold'} size={20}>
             {vehicle.name}
           </Text>
           <Text style={{ color: 'grey' }}>{vehicle.driverName}</Text>
-          <Text size={14} bold>
+          <Text size={14} weight={'bold'}>
             {vehicle.category}
           </Text>
         </View>

@@ -8,7 +8,7 @@ const Filter = () => {
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 2 }}>
-        <Text bold>Все</Text>
+        <Text weight={'bold'}>Все</Text>
         <Text>Грузовые</Text>
         <Text>Легковые</Text>
         <Text>Мото</Text>
