@@ -3,15 +3,49 @@ import { View } from 'react-native';
 import Grid from '../assets/icons/Grid';
 import List from '../assets/icons/List';
 import Text from '../components/AppText';
+import { VehicleCategory } from '../types';
 
-const Filter = () => {
+const categoriesMap = {
+  all: 'Все',
+  car: 'Легковая',
+  truck: 'Грузовая',
+  moto: 'Мотоцикл',
+};
+
+export type ExtendedVehicleCategory = VehicleCategory | 'all';
+
+type Props = {
+  currentCategory: ExtendedVehicleCategory;
+  changeCategory: (category: ExtendedVehicleCategory) => void;
+};
+
+const FilterText = ({
+  currentCategory,
+  category,
+  changeCategory,
+}: Props & { category: ExtendedVehicleCategory }) => {
+  return (
+    <Text
+      weight={currentCategory === category ? 'bold' : 'light'}
+      size={12}
+      onPress={() => changeCategory(category)}
+    >
+      {categoriesMap[category]}
+    </Text>
+  );
+};
+
+const Filter = ({ currentCategory, changeCategory }: Props) => {
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 2 }}>
-        <Text weight={'bold'}>Все</Text>
-        <Text>Грузовые</Text>
-        <Text>Легковые</Text>
-        <Text>Мото</Text>
+        {Object.keys(categoriesMap).map((category) => (
+          <FilterText
+            category={category as ExtendedVehicleCategory}
+            currentCategory={currentCategory}
+            changeCategory={changeCategory}
+          />
+        ))}
       </View>
       <View
         style={{
