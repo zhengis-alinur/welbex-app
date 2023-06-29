@@ -4,11 +4,12 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TouchableOpacity } from 'react-native';
 import { RootStackParamList } from '../../navigation/AppStack';
 import { useNavigation } from '@react-navigation/native';
+import { MAP_SCREEN } from '../../constants';
 
 function Map() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Map')}>
+    <TouchableOpacity onPress={() => navigation.navigate(MAP_SCREEN)}>
       <Svg width={31} height={31} viewBox="0 0 31 31" fill="none">
         <Path fill="url(#pattern0)" d="M0 0H31V31H0z" />
         <Defs>

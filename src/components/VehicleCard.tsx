@@ -1,44 +1,62 @@
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View, StyleSheet } from 'react-native';
 import Text from './AppText';
-import styled from 'styled-components/native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppStack';
 import { Vehicle } from '../types';
+import { CATEGORIES_MAP, VEHICLE_SCREEN } from '../constants';
 
-const StyledCard = styled.View`
-  flex-direction: row;
-  gap: 20px;
-  min-width: 100%;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, 0.05);
-  margin-top: 20px;
-`;
+const IMAGE_DIMENSIONS = { width: 130, height: 75 };
+const GRID_IMAGE_DIMENSIONS = { width: 170, height: 100 };
 
-const VehicleCard = ({ vehicle }: { vehicle: Vehicle }) => {
+type Props = { vehicle: Vehicle; gridView?: boolean };
+
+const VehicleCard = ({ vehicle, gridView }: Props) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  console.log(gridView);
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Vehicle', vehicle)}>
-      <StyledCard>
+    <TouchableOpacity onPress={() => navigation.navigate(VEHICLE_SCREEN, vehicle)}>
+      <View style={gridView ? styles.grid : styles.wrapper}>
         <Image
-          style={{ width: 130, height: 75 }}
+          style={gridView ? GRID_IMAGE_DIMENSIONS : IMAGE_DIMENSIONS}
           resizeMode="contain"
           source={{ uri: vehicle.image }}
         />
         <View>
-          <Text weight={'bold'} size={20}>
+          <Text weight="bold" size={20}>
             {vehicle.name}
           </Text>
           <Text style={{ color: 'grey' }}>{vehicle.driverName}</Text>
-          <Text size={14} weight={'bold'}>
-            {vehicle.category}
+          <Text size={14} weight="bold">
+            {CATEGORIES_MAP[vehicle.category]}
           </Text>
         </View>
-      </StyledCard>
+      </View>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flexDirection: 'row',
+    gap: 20,
+    minWidth: '100%',
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'rgba(255, 255, 255, 0.05)',
+    marginTop: 20,
+  },
+  grid: {
+    padding: 10,
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 20,
+    minWidth: '40%',
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'rgba(255, 255, 255, 0.05)',
+  },
+});
 
 export default VehicleCard;

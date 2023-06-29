@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { COLORS } from '../constants';
 
 type Props = {
   weight?: 'light' | 'bold';
@@ -8,7 +9,7 @@ type Props = {
 
 const AppText = styled.Text<Props>`
   font-family: 'Roboto';
-  color: ${(props) => (props.color ? props.color : '#FFF')};
+  color: ${(props) => props.color || COLORS.WHITE};
   font-weight: ${(props) => props.weight || 300};
   font-size: ${(props) => props.size || 12}px;
 `;

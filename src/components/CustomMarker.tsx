@@ -8,6 +8,7 @@ import Truck from '../assets/icons/Truck';
 import { Vehicle } from '../types';
 import { RootStackParamList } from '../navigation/AppStack';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { VEHICLE_SCREEN } from '../constants';
 
 type Props = {
   vehicle: Vehicle;
@@ -23,7 +24,7 @@ const CustomMarker = ({ vehicle }: Props) => {
       }}
       title={vehicle.name}
       description={vehicle.category}
-      onPress={() => navigation.navigate('Vehicle', vehicle)}
+      onPress={() => navigation.navigate(VEHICLE_SCREEN, vehicle)}
     >
       <View>
         <Text style={{ fontWeight: 'bold' }}>{vehicle.name}</Text>

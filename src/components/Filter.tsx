@@ -1,46 +1,44 @@
 import React from 'react';
-import { View } from 'react-native';
+import { TouchableHighlight } from 'react-native';
+import { Touchable, View } from 'react-native';
 import Grid from '../assets/icons/Grid';
 import List from '../assets/icons/List';
 import Text from '../components/AppText';
+import { CATEGORIES_MAP } from '../constants';
 import { VehicleCategory } from '../types';
 
-const categoriesMap = {
-  all: 'Все',
-  car: 'Легковая',
-  truck: 'Грузовая',
-  moto: 'Мотоцикл',
-};
-
 export type ExtendedVehicleCategory = VehicleCategory | 'all';
-
-type Props = {
-  currentCategory: ExtendedVehicleCategory;
-  changeCategory: (category: ExtendedVehicleCategory) => void;
-};
 
 const FilterText = ({
   currentCategory,
   category,
   changeCategory,
-}: Props & { category: ExtendedVehicleCategory }) => {
+}: Omit<Props, 'onGridView' | 'gridView'> & { category: ExtendedVehicleCategory }) => {
   return (
     <Text
       weight={currentCategory === category ? 'bold' : 'light'}
-      size={12}
+      size={currentCategory === category ? 13 : 12}
       onPress={() => changeCategory(category)}
     >
-      {categoriesMap[category]}
+      {CATEGORIES_MAP[category]}
     </Text>
   );
 };
 
-const Filter = ({ currentCategory, changeCategory }: Props) => {
+type Props = {
+  currentCategory: ExtendedVehicleCategory;
+  changeCategory: (category: ExtendedVehicleCategory) => void;
+  onGridView: (gridView: boolean) => void;
+  gridView: boolean;
+};
+
+const Filter = ({ currentCategory, changeCategory, onGridView, gridView }: Props) => {
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 2 }}>
-        {Object.keys(categoriesMap).map((category) => (
+        {Object.keys(CATEGORIES_MAP).map((category, index) => (
           <FilterText
+            key={index}
             category={category as ExtendedVehicleCategory}
             currentCategory={currentCategory}
             changeCategory={changeCategory}
@@ -56,8 +54,12 @@ const Filter = ({ currentCategory, changeCategory }: Props) => {
           gap: 10,
         }}
       >
-        <List />
-        <Grid />
+        <TouchableHighlight onPress={() => onGridView(false)}>
+          <List active={!gridView} />
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => onGridView(true)}>
+          <Grid active={gridView} />
+        </TouchableHighlight>
       </View>
     </View>
   );

@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
 import { View, Switch, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+import { COLORS } from '../constants';
+
+const ToggleWrapper = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Toggle = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   return (
-    <View style={styles.container}>
+    <ToggleWrapper>
       <Switch
-        trackColor={{ false: '#7EC9DA', true: '#7EC9DA' }}
-        thumbColor={'#FFF'}
-        ios_backgroundColor="#3e3e3e"
+        trackColor={{ false: COLORS.ACCENT, true: COLORS.ACCENT }}
+        thumbColor={COLORS.WHITE}
         onValueChange={toggleSwitch}
         value={isEnabled}
       />
-    </View>
+    </ToggleWrapper>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default Toggle;

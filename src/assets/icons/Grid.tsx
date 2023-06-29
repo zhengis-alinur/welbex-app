@@ -1,22 +1,10 @@
 import * as React from 'react';
 import Svg, { Path, Defs, Pattern, Use, Image } from 'react-native-svg';
 
-function Grid() {
+function Grid({ active }: { active: boolean }) {
   return (
-    <Svg width={20} height={20} viewBox="0 0 20 20" fill="none">
-      <Path fill="url(#pattern0)" d="M0 0H20V20H0z" />
-      <Defs>
-        <Pattern id="pattern0" patternContentUnits="objectBoundingBox" width={1} height={1}>
-          <Use xlinkHref="#image0_103_147" transform="scale(.01111)" />
-        </Pattern>
-        <Image
-          id="image0_103_147"
-          width={90}
-          height={90}
-          //@ts-ignore
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhElEQVR4nO3bT07CYByE4a6EO8gRRW/pnxV6FAP7MU1YuDUZp/Nr3ucCTN9ASSjfsgAAAAAAAGCRdJT0IulD0k0+N0nvkp4lHabusZB0kvSl//e5vta0Pa7Ix9BF/b64w5Q9ztDrxzPtPGWPM/R6D0x7m7LHGfq6wYVdp+xxht7EMmQPoc0IHULoEEKHEDqE0CGEDiF0CKFDCB1C6BBChxA6hNAhhA4hdAihdxR6i0dH31P2OENXPQxV2R5n6PUfO2lPU/Y4Qx/ufyJJuUh6mLLHHfsUuriLpMdpe6zu76Tzer8yfyFdJb2uH8+/vHPa9gAAAAzTdmZEZXss2s6MqGyPK3LVmRGV7XGGrjozorI9ztBVP0uqbI8zdNWZEZXtcYbexDJkD6HNCB1C6BBChxA6hNAhhA4hdAihQwgdQugQQocQOoTQIYQOIXQIoXcUuurMiMr2OENXPQxV2R5n6KozIyrb4wxddWZEZXvcsavOjKhsj1XbmRGV7QEAAAAAAFh27AcPs/3/u7BwXwAAAABJRU5ErkJggg=="
-        />
-      </Defs>
+    <Svg width={16} height={16} fill={active ? '#fff' : '#747474'} viewBox="0 0 16 16">
+      <Path d="M1 2.5A1.5 1.5 0 012.5 1h3A1.5 1.5 0 017 2.5v3A1.5 1.5 0 015.5 7h-3A1.5 1.5 0 011 5.5v-3zm8 0A1.5 1.5 0 0110.5 1h3A1.5 1.5 0 0115 2.5v3A1.5 1.5 0 0113.5 7h-3A1.5 1.5 0 019 5.5v-3zm-8 8A1.5 1.5 0 012.5 9h3A1.5 1.5 0 017 10.5v3A1.5 1.5 0 015.5 15h-3A1.5 1.5 0 011 13.5v-3zm8 0A1.5 1.5 0 0110.5 9h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 13.5v-3z" />
     </Svg>
   );
 }

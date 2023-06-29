@@ -8,9 +8,9 @@ import RootView from '../containers/RootView';
 const Settings = () => {
   return (
     <RootView>
-      <Header title={'Настройки'} />
+      <Header title="Настройки" />
       <View>
-        <Text weight={'bold'} size={24}>
+        <Text weight="bold" size={24}>
           Сменить язык
         </Text>
         <View

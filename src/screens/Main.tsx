@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
-import RootView from '../containers/RootView';
-import VehicleCard from '../components/VehicleCard';
-import { FlatList, View } from 'react-native';
-import Header from '../components/Header';
-import Filter, { ExtendedVehicleCategory } from '../components/Filter';
-import { Vehicle } from '../types';
+import React, { useEffect, useState } from 'react';
+import { FlatList, View, Text } from 'react-native';
+
 import Map from '../assets/icons/Map';
 import Settings from '../assets/icons/Settings';
+import Header from '../components/Header';
+import RootView from '../containers/RootView';
+import VehicleCard from '../components/VehicleCard';
+import Filter, { ExtendedVehicleCategory } from '../components/Filter';
+import { Vehicle } from '../types';
 
-const vehicles: Vehicle[] = require('../source/vehicles.json');
+const vehiclesResource: Vehicle[] = require('../source/vehicles.json');
 
 const Main = () => {
-  const [category, setCategory] = useState<ExtendedVehicleCategory>('moto');
+  const [category, setCategory] = useState<ExtendedVehicleCategory>('all');
+  const [gridView, setGridView] = useState<boolean>(false);
+  const [vehicles, setVehicles] = useState<Vehicle[]>(vehiclesResource);
 
   const changeCategory = (category: ExtendedVehicleCategory) => {
     setCategory(category);
   };
 
+  const onGridView = (isGrid: boolean) => {
+    setGridView(isGrid);
+  };
+
+  useEffect(() => {
+    setVehicles(
+      vehiclesResource.filter((vehicle) =>
+        category === 'all' ? true : vehicle.category === category,
+      ),
+    );
+  }, [category]);
+
   return (
     <RootView>
-      <Header title={'Транспортные средства'}>
+      <Header title="Транспортные средства">
         <View
           style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 20 }}
         >
@@ -27,13 +42,26 @@ const Main = () => {
           <Settings />
         </View>
       </Header>
-      <Filter currentCategory={category} changeCategory={changeCategory} />
-      <FlatList
-        data={Array.from(vehicles).filter((vehicle) =>
-          category === 'all' ? true : vehicle.category === category,
-        )}
-        renderItem={({ item }: { item: Vehicle }) => <VehicleCard vehicle={item} />}
+      <Filter
+        currentCategory={category}
+        changeCategory={changeCategory}
+        onGridView={onGridView}
+        gridView={gridView}
       />
+      {!gridView ? (
+        <FlatList
+          key="list"
+          data={vehicles}
+          renderItem={({ item }: { item: Vehicle }) => <VehicleCard vehicle={item} />}
+        />
+      ) : (
+        <FlatList
+          key="grid"
+          data={vehicles}
+          numColumns={2}
+          renderItem={({ item }: { item: Vehicle }) => <VehicleCard gridView vehicle={item} />}
+        />
+      )}
     </RootView>
   );
 };
