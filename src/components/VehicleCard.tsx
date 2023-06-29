@@ -25,7 +25,7 @@ const VehicleCard = ({ vehicle }: { vehicle: Vehicle }) => {
         <Image
           style={{ width: 130, height: 75 }}
           resizeMode="contain"
-          source={require('../assets/mazda.png')}
+          source={{ uri: vehicle.image }}
         />
         <View>
           <Text weight={'bold'} size={20}>

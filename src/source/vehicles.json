@@ -5,6 +5,7 @@
 		"category": "car",
 		"driverName": "John Beck",
 		"driverPhone": "+1231231212",
+		"image": "https://elmodrive.com/wp-content/uploads/2021/11/hondae_1.png",
 		"latitude": 37.78825,
 		"longitude": -122.4354
 	},
@@ -14,6 +15,7 @@
 		"category": "car",
 		"driverName": "Andrew Tate",
 		"driverPhone": "+1231231212",
+		"image": "https://pngimg.com/uploads/mazda/mazda_PNG67.png",
 		"latitude": 37.78825,
 		"longitude": -122.4424
 	},
@@ -23,6 +25,7 @@
 		"category": "moto",
 		"driverName": "Bill Jack",
 		"driverPhone": "+1231231212",
+		"image": "https://purepng.com/public/uploads/large/purepng.com-harley-davidsonmotorcyclemotorbikebikevehicleharley-davidson-981525163190dyp2q.png",
 		"latitude": 37.78825,
 		"longitude": -122.4824
 	},
@@ -32,6 +35,7 @@
 		"category": "car",
 		"driverName": "Bill Gates",
 		"driverPhone": "+1231231212",
+		"image": "https://crdms.images.consumerreports.org/c_lfill,w_720,q_auto,f_auto/prod/cars/cr/model-years/14395-2022-mercedes-benz-s-class",
 		"latitude": 37.78725,
 		"longitude": -122.4324
 	},
@@ -41,16 +45,18 @@
 		"category": "truck",
 		"driverName": "Simon Timberlake",
 		"driverPhone": "+1231231212",
+		"image": "https://assets.mbvans.com/e_trim/Mercedes-Benz-Vans/Sprinter/cargo-van/BYO/2019/MY19_M1CA46_SI_SR_9147_DS",
 		"latitude": 37.78525,
 		"longitude": -122.5324
 	},
 	{
-		"name": "gazelle",
+		"name": "Gazelle Next",
 		"id": "0006",
 		"category": "truck",
 		"driverName": "Sasha Bean",
 		"driverPhone": "+1231231212",
+		"image": "https://tuningbus.ru/storage/images/da96697991f26cd03e1eceee52dbd2d7.png",
 		"latitude": 37.78325,
-		"longitude": -121.4324
+		"longitude": -122.4324
 	}
 ]

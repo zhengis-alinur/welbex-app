@@ -6,6 +6,7 @@ export type Vehicle = {
 	driverPhone: string,
 	latitude: number,
 	longitude: number
+	image?: string,
 }
 
 export type VehicleCategory = 'car'|'truck'|'moto';

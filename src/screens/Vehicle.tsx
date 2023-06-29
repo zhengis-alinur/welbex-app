@@ -44,7 +44,7 @@ const Vehicle = ({
         <Image
           style={{ width: 300, height: 200 }}
           resizeMode="contain"
-          source={require('../assets/mazda.png')}
+          source={{ uri: route.params?.image }}
         />
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <View style={{ width: '50%' }}>
