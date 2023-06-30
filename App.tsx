@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
+import './src/localizations/i18n';
 
-export default function App() {
+function App() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#212121' }}>
       <AppNavigator />
@@ -10,3 +11,5 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+export default App;

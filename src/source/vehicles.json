@@ -4,69 +4,109 @@
 		"id": "0001",
 		"category": "car",
 		"driverName": "John Beck",
-		"driverPhone": "+1231231212",
+		"driverPhone": "+79850872575",
 		"image": "https://elmodrive.com/wp-content/uploads/2021/11/hondae_1.png",
-		"latitude": 37.78825,
-		"longitude": -122.4354
+		"latitude": 37.76825,
+		"longitude": -122.4854
 	},
 	{
 		"name": "Mercedes S class",
 		"id": "0002",
 		"category": "car",
 		"driverName": "Andrew Tate",
-		"driverPhone": "+1231231212",
+		"driverPhone": "+79850872575",
 		"image": "https://pngimg.com/uploads/mazda/mazda_PNG67.png",
 		"latitude": 37.78825,
 		"longitude": -122.4424
+	},
+	{
+		"name": "Audi quatro",
+		"id": "0008",
+		"category": "car",
+		"driverName": "James Black",
+		"driverPhone": "+79850872575",
+		"image": "https://free-png.ru/wp-content/uploads/2020/11/e69910f117cab2d47dee3a487d98184b-2c4d2b58.png",
+		"latitude": 37.78625,
+		"longitude": -122.4174
 	},
 	{
 		"name": "Harley Davidson",
 		"id": "0003",
 		"category": "moto",
 		"driverName": "Bill Jack",
-		"driverPhone": "+1231231212",
+		"driverPhone": "+79850872575",
 		"image": "https://purepng.com/public/uploads/large/purepng.com-harley-davidsonmotorcyclemotorbikebikevehicleharley-davidson-981525163190dyp2q.png",
-		"latitude": 37.78825,
-		"longitude": -122.4824
-	},
-	{
-		"name": "Mercedes S class",
-		"id": "0004",
-		"category": "car",
-		"driverName": "Bill Gates",
-		"driverPhone": "+1231231212",
-		"image": "https://crdms.images.consumerreports.org/c_lfill,w_720,q_auto,f_auto/prod/cars/cr/model-years/14395-2022-mercedes-benz-s-class",
-		"latitude": 37.78725,
-		"longitude": -122.4324
+		"latitude": 37.79825,
+		"longitude": -122.4624
 	},
 	{
 		"name": "Mercedes Sprinter",
 		"id": "0005",
 		"category": "truck",
 		"driverName": "Simon Timberlake",
-		"driverPhone": "+1231231212",
+		"driverPhone": "+79850872575",
 		"image": "https://assets.mbvans.com/e_trim/Mercedes-Benz-Vans/Sprinter/cargo-van/BYO/2019/MY19_M1CA46_SI_SR_9147_DS",
-		"latitude": 37.78525,
-		"longitude": -122.5324
+		"latitude": 37.78595,
+		"longitude": -122.7324
+	},
+	{
+		"name": "Mercedes S class",
+		"id": "0004",
+		"category": "car",
+		"driverName": "Bill Gates",
+		"driverPhone": "+79850872575",
+		"image": "https://crdms.images.consumerreports.org/c_lfill,w_720,q_auto,f_auto/prod/cars/cr/model-years/14395-2022-mercedes-benz-s-class",
+		"latitude": 37.74725,
+		"longitude": -122.4324
+	},
+	{
+		"name": "BMW 3 Series",
+		"id": "0009",
+		"category": "car",
+		"driverName": "Mr Beast",
+		"driverPhone": "+79850872575",
+		"image": "https://i.pinimg.com/originals/d9/bf/54/d9bf54d2a986c2ace6b4bef4779d06b8.png",
+		"latitude": 37.7965,
+		"longitude": -122.4374
 	},
 	{
 		"name": "Gazelle Next",
 		"id": "0006",
 		"category": "truck",
 		"driverName": "Sasha Bean",
-		"driverPhone": "+1231231212",
+		"driverPhone": "+79850872575",
 		"image": "https://tuningbus.ru/storage/images/da96697991f26cd03e1eceee52dbd2d7.png",
-		"latitude": 37.78325,
-		"longitude": -122.4324
+		"latitude": 37.78335,
+		"longitude": -122.4314
 	},
 	{
 		"name": "Subaru Impreza",
 		"id": "0007",
 		"category": "car",
 		"driverName": "Zhengis Ainur",
-		"driverPhone": "+1231231212",
+		"driverPhone": "+79850872575",
 		"image": "https://www.pngplay.com/wp-content/uploads/13/Subaru-Impreza-Transparent-PNG.png",
-		"latitude": 37.78625,
+		"latitude": 37.78025,
 		"longitude": -122.4374
+	},
+	{
+		"name": "Land Rover",
+		"id": "0010",
+		"category": "car",
+		"driverName": "Алексеев Николай",
+		"driverPhone": "+79850872575",
+		"image": "https://www.pngplay.com/wp-content/uploads/13/Land-Rover-Defender-Transparent-Images.png",
+		"latitude": 37.78629,
+		"longitude": -122.4879
+	},
+	{
+		"name": "Mitsubishi",
+		"id": "0011",
+		"category": "truck",
+		"driverName": "Николаев Алексей",
+		"driverPhone": "+79850872575",
+		"image": "https://i.pinimg.com/originals/d0/24/2b/d0242b54e1cfb109a44c3b0ed2f6e0d2.png",
+		"latitude": 37.76425,
+		"longitude": -122.4379
 	}
 ]

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import MapView from 'react-native-maps';
 import styled from 'styled-components/native';
@@ -20,10 +21,11 @@ type Props = {
 };
 
 const VehicleMap = ({ vehicle }: Props) => {
+  const { t } = useTranslation();
   return (
     <>
       <Text weight={'bold'} size={15}>
-        Near Rental Map
+        {t('location')}
       </Text>
       <VehicleMapWrapper>
         <MapView

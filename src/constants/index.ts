@@ -1,5 +1,3 @@
-import type {RootStackParamList} from '../navigation/AppStack'
-
 export const	MAIN_SCREEN = 'Main';
 export const	MAP_SCREEN = 'Map';
 export const	SETTINGS_SCREEN = 'Settings';
@@ -14,17 +12,23 @@ export const INITIAL_REGION={
 	longitudeDelta: 0.0421,
 }
 
+
 export const CATEGORIES_MAP = {
-  all: 'Все',
-  car: 'Легковая',
-  truck: 'Грузовая',
-  moto: 'Мотоцикл',
+  all: 'all',
+  car: 'car',
+  truck: 'truck',
+  moto: 'moto',
 };
 
-export const COLORS = {
+export const  COLORS = {
 	WHITE: '#FFF',
 	BLACK: '#000',
 	ACCENT: '#7EC9DA',
 	BG_PRIMARY: '#212121',
 	GREY: '#747474'
 }
+
+export const EN = 'en';
+export const RU = 'ru';
+
+export const MESSAGE = 'Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе'

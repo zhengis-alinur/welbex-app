@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 import Map from '../assets/icons/Map';
 import Settings from '../assets/icons/Settings';
@@ -8,10 +8,13 @@ import RootView from '../containers/RootView';
 import VehicleCard from '../components/VehicleCard';
 import Filter, { ExtendedVehicleCategory } from '../components/Filter';
 import { Vehicle } from '../types';
+import { useTranslation } from 'react-i18next';
 
 const vehiclesResource: Vehicle[] = require('../source/vehicles.json');
 
 const Main = () => {
+  const { t } = useTranslation();
+
   const [category, setCategory] = useState<ExtendedVehicleCategory>('all');
   const [gridView, setGridView] = useState<boolean>(false);
   const [vehicles, setVehicles] = useState<Vehicle[]>(vehiclesResource);
@@ -34,7 +37,7 @@ const Main = () => {
 
   return (
     <RootView>
-      <Header title="Транспортные средства">
+      <Header title={t('mainHeader')}>
         <View
           style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 20 }}
         >

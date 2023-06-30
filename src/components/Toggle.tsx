@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, Switch, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import { Switch } from 'react-native';
 import styled from 'styled-components/native';
-import { COLORS } from '../constants';
+import { COLORS, EN, RU } from '../constants';
+import { Language } from '../types';
 
 const ToggleWrapper = styled.View`
   flex: 1;
@@ -10,15 +12,21 @@ const ToggleWrapper = styled.View`
 `;
 
 const Toggle = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const { t, i18n } = useTranslation();
+
+  const [isEnabled, setIsEnabled] = useState(i18n.language == 'ru');
+
+  const toggleSwitch = (lang: Language) => {
+    setIsEnabled((previousState) => !previousState);
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <ToggleWrapper>
       <Switch
         trackColor={{ false: COLORS.ACCENT, true: COLORS.ACCENT }}
         thumbColor={COLORS.WHITE}
-        onValueChange={toggleSwitch}
+        onValueChange={() => toggleSwitch(isEnabled ? EN : RU)}
         value={isEnabled}
       />
     </ToggleWrapper>

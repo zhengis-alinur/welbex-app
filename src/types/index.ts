@@ -9,4 +9,6 @@ export type Vehicle = {
 	image?: string,
 }
 
+export type Language = 'en' | 'ru';
+
 export type VehicleCategory = 'car'|'truck'|'moto';

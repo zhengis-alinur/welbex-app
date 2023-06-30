@@ -11,6 +11,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Vehicle as VehicleType } from '../types';
 import VehicleMap from '../components/VehicleMap';
 import VehicleDetails from '../components/VehicleDetails';
+import { useTranslation } from 'react-i18next';
 
 type VehicleHeaderProps = {
   vehicle: VehicleType;
@@ -36,11 +37,13 @@ const Vehicle = ({
   route: RouteProp<RootStackParamList>;
   navigation: NativeStackNavigationProp<RootStackParamList>;
 }) => {
+  const { t } = useTranslation();
+
   const vehicle = route.params as VehicleType;
 
   return (
     <RootView style={styles.root}>
-      <Header title={'Транспортное средство'} />
+      <Header title={t('vehicle')} />
       <Wrapper>
         <VehicleHeader vehicle={vehicle} />
         <VehicleMap vehicle={vehicle} />

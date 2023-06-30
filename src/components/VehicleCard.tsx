@@ -6,6 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/AppStack';
 import { Vehicle } from '../types';
 import { CATEGORIES_MAP, VEHICLE_SCREEN } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const IMAGE_DIMENSIONS = { width: 130, height: 75 };
 const GRID_IMAGE_DIMENSIONS = { width: 170, height: 100 };
@@ -13,8 +14,9 @@ const GRID_IMAGE_DIMENSIONS = { width: 170, height: 100 };
 type Props = { vehicle: Vehicle; gridView?: boolean };
 
 const VehicleCard = ({ vehicle, gridView }: Props) => {
+  const { t } = useTranslation();
+
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  console.log(gridView);
   return (
     <TouchableOpacity onPress={() => navigation.navigate(VEHICLE_SCREEN, vehicle)}>
       <View style={gridView ? styles.grid : styles.wrapper}>
@@ -29,7 +31,7 @@ const VehicleCard = ({ vehicle, gridView }: Props) => {
           </Text>
           <Text style={{ color: 'grey' }}>{vehicle.driverName}</Text>
           <Text size={14} weight="bold">
-            {CATEGORIES_MAP[vehicle.category]}
+            {t(CATEGORIES_MAP[vehicle.category])}
           </Text>
         </View>
       </View>

@@ -1,7 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { View, Image, Linking } from 'react-native';
 import Text from '../components/AppText';
-import { COLORS } from '../constants';
+import { COLORS, MESSAGE } from '../constants';
 import { Vehicle } from '../types';
 import Badge from './Badge';
 
@@ -10,6 +11,7 @@ type Props = {
 };
 
 const VehicleDetails = ({ vehicle }: Props) => {
+  const { t } = useTranslation();
   const handleCall = () => {
     Linking.openURL(`tel:${vehicle.driverPhone}`);
   };
@@ -21,10 +23,14 @@ const VehicleDetails = ({ vehicle }: Props) => {
           justifyContent: 'flex-start',
         }}
       >
-        <Text>Rented Vehicle</Text>
-        <Text weight="bold" size={16}>
-          {vehicle?.name}
-        </Text>
+        <Text>{t('rentedVehicle')}</Text>
+        <Text>Category: {t(vehicle.category)}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 10 }}>
+          <Text weight="bold" size={16}>
+            {vehicle?.name}
+          </Text>
+          <Text>{}</Text>
+        </View>
       </View>
       <Image
         style={{ width: 300, height: 200 }}
@@ -34,7 +40,7 @@ const VehicleDetails = ({ vehicle }: Props) => {
       <View style={{ flexDirection: 'row', gap: 10 }}>
         <View style={{ width: '50%' }}>
           <Text weight="light" size={12}>
-            Driver
+            {t('driver')}:
           </Text>
           <Text weight="bold" size={16}>
             {vehicle?.driverName}
@@ -42,7 +48,7 @@ const VehicleDetails = ({ vehicle }: Props) => {
         </View>
         <View>
           <Text weight="light" size={12}>
-            Phone:
+            {t('phone')}:
           </Text>
           <Text weight="bold" size={16}>
             {vehicle?.driverPhone}
@@ -50,14 +56,21 @@ const VehicleDetails = ({ vehicle }: Props) => {
         </View>
       </View>
       <View style={{ flexDirection: 'row', gap: 10 }}>
-        <Badge bgColor={COLORS.WHITE}>
+        <Badge
+          bgColor={COLORS.WHITE}
+          onPress={() =>
+            Linking.openURL(
+              `http://api.whatsapp.com/send?text=${MESSAGE}&phone=${vehicle.driverPhone}`,
+            )
+          }
+        >
           <Text weight="light" size={17} color={COLORS.BLACK}>
-            Написать
+            {t('chat')}
           </Text>
         </Badge>
         <Badge onPress={handleCall}>
           <Text weight="light" size={16}>
-            Позвонить
+            {t('call')}
           </Text>
         </Badge>
       </View>

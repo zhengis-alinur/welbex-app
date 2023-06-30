@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { TouchableHighlight } from 'react-native';
 import { Touchable, View } from 'react-native';
 import Grid from '../assets/icons/Grid';
@@ -14,13 +15,15 @@ const FilterText = ({
   category,
   changeCategory,
 }: Omit<Props, 'onGridView' | 'gridView'> & { category: ExtendedVehicleCategory }) => {
+  const { t } = useTranslation();
+
   return (
     <Text
       weight={currentCategory === category ? 'bold' : 'light'}
       size={currentCategory === category ? 13 : 12}
       onPress={() => changeCategory(category)}
     >
-      {CATEGORIES_MAP[category]}
+      {t(CATEGORIES_MAP[category])}
     </Text>
   );
 };
