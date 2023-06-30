@@ -15,6 +15,9 @@ const VehicleDetails = ({ vehicle }: Props) => {
   const handleCall = () => {
     Linking.openURL(`tel:${vehicle.driverPhone}`);
   };
+  const handleChat = () => {
+    Linking.openURL(`http://api.whatsapp.com/send?text=${MESSAGE}&phone=${vehicle.driverPhone}`);
+  };
   return (
     <>
       <View
@@ -56,14 +59,7 @@ const VehicleDetails = ({ vehicle }: Props) => {
         </View>
       </View>
       <View style={{ flexDirection: 'row', gap: 10 }}>
-        <Badge
-          bgColor={COLORS.WHITE}
-          onPress={() =>
-            Linking.openURL(
-              `http://api.whatsapp.com/send?text=${MESSAGE}&phone=${vehicle.driverPhone}`,
-            )
-          }
-        >
+        <Badge bgColor={COLORS.WHITE} onPress={handleChat}>
           <Text weight="light" size={17} color={COLORS.BLACK}>
             {t('chat')}
           </Text>

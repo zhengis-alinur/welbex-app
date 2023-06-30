@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { COLORS } from '../constants';
 
+//Кастомный компонент текста для проекта
+
 type Props = {
   weight?: 'light' | 'bold';
   size?: number;

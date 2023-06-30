@@ -10,7 +10,7 @@ const ToggleWrapper = styled.View`
   justify-content: center;
   align-items: center;
 `;
-
+//Комопнент для переключение языка приложения
 const Toggle = () => {
   const { t, i18n } = useTranslation();
 

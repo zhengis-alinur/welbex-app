@@ -13,6 +13,9 @@ const GRID_IMAGE_DIMENSIONS = { width: 170, height: 100 };
 
 type Props = { vehicle: Vehicle; gridView?: boolean };
 
+//Компонента карточки транспорта на главной странице
+//С возможностью переключения верстки List/Grid
+
 const VehicleCard = ({ vehicle, gridView }: Props) => {
   const { t } = useTranslation();
 

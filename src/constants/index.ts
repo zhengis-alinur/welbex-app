@@ -12,7 +12,6 @@ export const INITIAL_REGION={
 	longitudeDelta: 0.0421,
 }
 
-
 export const CATEGORIES_MAP = {
   all: 'all',
   car: 'car',

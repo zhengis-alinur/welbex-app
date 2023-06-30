@@ -8,8 +8,11 @@ import Text from '../components/AppText';
 import { CATEGORIES_MAP } from '../constants';
 import { VehicleCategory } from '../types';
 
+// Компонент фильтрации транпортов
+
 export type ExtendedVehicleCategory = VehicleCategory | 'all';
 
+// Компонент текста фильтра
 const FilterText = ({
   currentCategory,
   category,

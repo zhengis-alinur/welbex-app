@@ -14,6 +14,8 @@ type Props = {
   vehicle: Vehicle;
 };
 
+// Кастомный маркер в картах, с измененной иконкой в виде транспорта согласно его категории
+
 const CustomMarker = ({ vehicle }: Props) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
